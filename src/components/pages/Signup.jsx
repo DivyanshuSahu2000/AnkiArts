@@ -117,7 +117,7 @@ import { FaPencilAlt } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthContext";
 
 const Signup = () => {
-  const { login } = useContext(AuthContext);
+  const { signUp } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -129,7 +129,7 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const userData = { name: form.name, email: form.email };
-    login(userData);
+    signUp(userData);
 
     navigate("/");
   };
