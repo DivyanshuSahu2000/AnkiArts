@@ -42,8 +42,11 @@ AnkiArts is a frontend e‑commerce web application built with **React** that sh
 ---
 
 ## 📸 Screenshots
-
+#                                                           Home Page
 ![App Screenshot](./public/Screenshot.png)
+
+
+#                                                           Cart Page 🛒
 ![App Screenshot](./public/Screenshot%202.png)
 
 ---
