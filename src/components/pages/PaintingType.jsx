@@ -59,9 +59,8 @@ const Paintings = () => {
             </div>
             <div className="items-center justify-center flex">
               <button
-                // onClick={() => addToCart(painting)}
                 onClick={() => handleAddToCart(painting)}
-                className="mt-3 w-3/4 gap-1 items-center justify-center flex bg-[#2e2856] hover:bg-[#4b3ea1] text-white font-medium px-4 py-2 rounded-lg shadow-md  hover:shadow-xl transition-all duration-300"
+                className="mt-3 w-3/4 gap-1 items-center justify-center flex bg-[#2e2856] hover:bg-[#4b3ea1] text-white font-medium px-4 py-2 rounded-lg shadow-md  hover:shadow-xl transition-all duration-300 active:scale-95"
               >
                 Add to Cart
                 <FaShoppingCart />

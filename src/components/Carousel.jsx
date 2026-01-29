@@ -17,8 +17,6 @@ const Carousel = () => {
 
   return (
     <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
-      {/* Slider track */}
-
       <div
         className="flex transition-transform ease-in-out duration-700"
         style={{ transform: `translateX(-${current * 100}%)` }}
@@ -40,7 +38,6 @@ const Carousel = () => {
         ))}
       </div>
 
-      {/* Dots */}
       <div className="absolute bottom-9 left-1/2 -translate-x-1/2 flex gap-2">
         {carouselItems.map((_, id) => (
           <button
@@ -57,74 +54,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-
-// import React, { useContext, useEffect, useState } from "react";
-// import { ItemContext } from "../context/ItemContext";
-// import { Link } from "react-router";
-
-// // const paintings = [
-// //   "rimage3.jpg",
-// //   "rimage1.jpg",
-// //   "rimage4.jpg",
-// //   "rimage6.jpg",
-// //   "rimage7.jpg",
-// //   "rimage9.jpg",
-// // ];
-
-// const Carousel = () => {
-//   const { dummyPaintings } = useContext(ItemContext);
-//   const [current, setCurrent] = useState(0);
-//   const carouselItems = [...dummyPaintings]
-//     .sort(() => 0.5 - Math.random())
-//     .slice(0, 5);
-
-//   useEffect(() => {
-//     const timer = setInterval(() => {
-//       setCurrent((prev) => (prev + 1) % carouselItems.length);
-//     }, 3000);
-
-//     return () => clearInterval(timer);
-//   }, []);
-
-//   return (
-//     <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
-//       {/* Slider track */}
-
-//       <div
-//         className="flex transition-transform ease-in-out duration-700"
-//         style={{ transform: `translateX(-${current * 100}%)` }}
-//       >
-//         {carouselItems.map((item, i) => (
-//           <Link
-//             className="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[650px] flex-shrink-0 flex items-center justify-center bg-gray-200"
-//             key={item.id}
-//             to={`/paintings/${item.id}`}
-//           >
-//             <div className="w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[650px] flex-shrink-0 flex items-center justify-center bg-gray-200">
-//               <img
-//                 src={item.rimage}
-//                 alt={`painting-${i}`}
-//                 className="w-full h-full object-contain"
-//               />
-//             </div>
-//           </Link>
-//         ))}
-//       </div>
-
-//       {/* Dots */}
-//       <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex gap-2">
-//         {carouselItems.map((_, idx) => (
-//           <button
-//             key={idx}
-//             onClick={() => setCurrent(idx)}
-//             className={`w-3 h-3 rounded-full ${
-//               idx === current ? "bg-white" : "bg-gray-400"
-//             }`}
-//           ></button>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Carousel;

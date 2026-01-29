@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="relative h-[84vh] bg-gray-300 flex items-center justify-center text-white">
+    <div className="relative h-[85vh] bg-gray-200 flex items-center justify-center text-white">
       <div
         className="absolute inset-0 bg-cover sm:bg-contain bg-center bg-no-repeat opacity-75"
         style={{ backgroundImage: 'url("/Aboutbg.png")' }}
@@ -27,13 +27,3 @@ const About = () => {
 };
 
 export default About;
-
-{
-  /* 
-          <p>The artist</p>
-          <p>has the</p>
-          <p>Universe</p>
-          <p>in his mind</p>
-          <p>and hands.</p>
-          <p className="font-medium">-Leonardo da Vinci</p> */
-}

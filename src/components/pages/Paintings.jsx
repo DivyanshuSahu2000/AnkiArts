@@ -45,9 +45,8 @@ const Paintings = () => {
           </div>
           <div className="items-center justify-center flex">
             <button
-              // onClick={() => addToCart(painting)}
               onClick={() => handleAddToCart(painting)}
-              className="mt-3 w-3/4 gap-1 items-center justify-center flex bg-[#2e2856] hover:bg-[#4b3ea1] text-white font-medium px-4 py-2 rounded-lg shadow-md  hover:shadow-xl transition-all duration-300"
+              className="mt-3 w-3/4 gap-1 items-center justify-center flex bg-[#2e2856] hover:bg-[#4b3ea1] text-white font-medium px-4 py-2 rounded-lg shadow-md  hover:shadow-xl transition-all duration-300 active:scale-95"
             >
               Add to Cart
               <FaShoppingCart />
@@ -60,55 +59,3 @@ const Paintings = () => {
 };
 
 export default Paintings;
-
-// const dummyPaintings = [
-//   {
-//     id: 1,
-//     title: "Sunset Bliss",
-//     price: 1200,
-//     size: "24x30 inch",
-//     image: "image2.jpg",
-//   },
-//   {
-//     id: 2,
-//     title: "Ocean Dreams",
-//     price: 950,
-//     size: "5x6 fit",
-//     image: "image3.jpg",
-//   },
-//   {
-//     id: 3,
-//     title: "Poor & Rich",
-//     price: 1500,
-//     size: "30x36 inch",
-//     image: "image1.jpg",
-//   },
-//   {
-//     id: 4,
-//     title: "Cat Sketch",
-//     price: 1600,
-//     size: "12x12 inch",
-//     image: "image4.jpg",
-//   },
-//   {
-//     id: 5,
-//     title: "Mystic River",
-//     price: 1800,
-//     size: "36x48 inch",
-//     image: "image7.jpg",
-//   },
-//   {
-//     id: 6,
-//     title: "Mystic River",
-//     price: 1800,
-//     size: "36x48 inch",
-//     image: "image6.jpg",
-//   },
-//   {
-//     id: 7,
-//     title: "Mystic River",
-//     price: 1800,
-//     size: "36x48 inch",
-//     image: "image9.jpg",
-//   },
-// ];

@@ -29,6 +29,14 @@ const Cart = () => {
       theme: "dark",
     });
   };
+
+  const handleOrderPlaced = () => {
+    toast.success(`Your Order Placed Successfully`, {
+      position: "bottom-right",
+      autoClose: 1000,
+      theme: "dark",
+    });
+  };
   let totalItem = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
   return (
     <div className=" md:px-23  sm:px-10 px-5 items-center sm:flex-col justifiy-center py-8">
@@ -76,7 +84,10 @@ const Cart = () => {
                       ₹{item.qty > 1 ? item.qty * item.price : item.price}
                       {/* ₹{item.price}*{item.qty} */}
                     </p>
-                    <button onClick={() => handleRemoveFromCart(item)}>
+                    <button
+                      onClick={() => handleRemoveFromCart(item)}
+                      className="active:scale-95"
+                    >
                       <MdDelete size={23} />
                     </button>
                   </div>
@@ -85,7 +96,7 @@ const Cart = () => {
               <div className="flex justify-end">
                 <button
                   onClick={handleClearCart}
-                  className="bg-red-100 flex gap-1 text-gray-700 px-4 py-2 rounded hover:bg-red-50"
+                  className="bg-red-200 flex gap-1 text-gray-700 px-4 py-2 rounded hover:bg-red-300 active:scale-95 font-bold"
                 >
                   Clear cart
                   <div>
@@ -116,7 +127,10 @@ const Cart = () => {
               <span>₹{total}</span>
             </h3>
             <div className="total p-2 flex-1">
-              <button className="mt-2 flex gap-1 font-serif bg-green-600 text-white px-2 py-2 rounded hover:bg-green-700 text-xl">
+              <button
+                onClick={handleOrderPlaced}
+                className="mt-2 flex gap-1 active:scale-95 font-serif bg-green-600 text-white px-2 py-2 rounded hover:bg-green-700 text-xl"
+              >
                 PLACE ORDER
                 <MdOutlineEmojiEmotions className="mt-1" size={20} />
               </button>
@@ -129,76 +143,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-// import { useContext } from "react";
-// // import { useCart } from "../context/CartContext";
-// import { CartContext } from "../../context/CartContext";
-// import { MdDelete } from "react-icons/md";
-// import { RiDeleteBin2Fill } from "react-icons/ri";
-// import { MdOutlineEmojiEmotions } from "react-icons/md";
-
-// const Cart = () => {
-//   const { cart, removeFromCart, clearCart } = useContext(CartContext);
-
-//   const total = cart.reduce((sum, item) => sum + item.price, 0);
-
-//   return (
-//     <div className="p-8 px-25">
-//       <h2 className="text-3xl font-medium font-serif">Your Cart</h2>
-//       <h2 className="text-sm font-medium text-gray-600 font-serif mb-6">
-//         You have {cart.length} items in your cart
-//       </h2>
-//       <div>
-//         {cart.length === 0 ? (
-//           <p>Your cart is empty 🛒</p>
-//         ) : (
-//           <>
-//             <div className="space-y-4">
-//               {cart.map((item, index) => (
-//                 <div
-//                   key={index}
-//                   className="flex items-center justify-between border-b pb-2"
-//                 >
-//                   <div className="flex items-center gap-4">
-//                     <img
-//                       src={item.image}
-//                       alt={item.title}
-//                       className="w-20 h-16 object-cover rounded"
-//                     />
-//                     <div>
-//                       <h3 className="font-semibold">{item.title}</h3>
-//                       <p className="text-gray-600">₹{item.price}</p>
-//                     </div>
-//                   </div>
-//                   <button onClick={() => removeFromCart(item.id)} className="">
-//                     <MdDelete size={23} />
-//                   </button>
-//                 </div>
-//               ))}
-//             </div>
-
-//             <div className="mt-6 flex justify-between items-center">
-//               <h3 className="text-xl font-bold">Total: ₹{total}</h3>
-//               <button
-//                 onClick={clearCart}
-//                 className="bg-red-700 flex gap-1 text-white px-4 py-2 rounded hover:bg-red-800"
-//               >
-//                 Clear cart
-//                 <div>
-//                   <RiDeleteBin2Fill size={21} />
-//                 </div>
-//               </button>
-//             </div>
-
-//             <button className="mt-4 flex gap-1 font-bold bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
-//               PLACE ORDER
-//               <MdOutlineEmojiEmotions className="mt-0.7" size={20} />
-//             </button>
-//           </>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Cart;

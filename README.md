@@ -41,9 +41,10 @@ AnkiArts is a frontend e‑commerce web application built with **React** that sh
 
 ---
 
-## 📸 Screenshots (Optional)
+## 📸 Screenshots
 
 ![App Screenshot](./public/Screenshot.png)
+![App Screenshot](./public/Screenshot%202.png)
 
 ---
 
@@ -57,24 +58,6 @@ AnkiArts is a frontend e‑commerce web application built with **React** that sh
 - **React Toastify**
 - **UUID**
 - **Netlify** (deployment)
-
----
-
-## 🚀 Future Improvements
-
-- Backend authentication (JWT)
-- Payment gateway integration
-- Order history
-- Admin dashboard
-- Wishlist feature
-
----
-
-## 👨‍💻 Author
-
-**Divyanshu Sahu**
-
-- LinkedIn: [https://www.linkedin.com/in/divyanshu-sahu-2000sahu](https://www.linkedin.com/in/divyanshu-sahu-2000sahu)
 
 ---
 

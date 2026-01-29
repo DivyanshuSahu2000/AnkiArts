@@ -16,7 +16,7 @@ const Header = () => {
               <img src="logoart.png" alt="" />
             </Link>
           </div>
-          <Link>
+          <Link to="/">
             <span className="font-serif text-3xl [@media(max-width:400px)]:text-xl">
               AnkiArts{" "}
             </span>
@@ -28,51 +28,53 @@ const Header = () => {
         </div>
         <div className=" pages flex text-white text-lg [@media(max-width:400px)]:text-sm font-medium  m-2 gap-2 md:gap-10">
           <Link to="/about">
-            <span>About</span>
+            <span className=" hover:text-gray-200">About</span>
           </Link>
           <Link to="/contact">
-            <span>Contact</span>
+            <span className=" hover:text-gray-200">Contact</span>
           </Link>
 
           {/* <Link to="/cart">Cart ({cart.length})</Link> */}
 
-          <Link to="/cart" className="relative mt-[5px]">
+          <Link to="/cart" className="relative mt-[5px] hover:scale-105">
             <span className="mt-[3px]">
               <FaShoppingCart />
             </span>
             {cart.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-zinc-600 text-white text-xs font-bold w-4 h-4 flex items-center justify-center rounded-full">
+              <span className="absolute -top-2 -right-2 bg-zinc-600 text-white text-xs font-bold w-4 h-4 flex items-center justify-center rounded-full ">
                 {cart.length}
               </span>
             )}
           </Link>
-          {/* 
-          <span className="mt-[3px]">
-            <FaShoppingCart />
-          </span> */}
         </div>
       </div>
       <div className="justify-around flex md:px-3 py-1 md:divide-x divide-gray-400  bg-gray-50 [@media(max-width:400px)]:text-sm [@media(max-width:325px)]:!text-[12px]">
         <Link to="/paintingtype/Acrylic">
-          <span className="md:px-2 px-1">Acrylic</span>
+          <span className="md:px-2 px-1 hover:text-gray-500 ">Acrylic</span>
         </Link>
         <Link to="/paintingtype/Gouache">
-          <span className="md:px-2 px-1">Gouache</span>
+          <span className="md:px-2 px-1  hover:text-gray-500">Gouache</span>
         </Link>
         <Link to="/paintingtype/Pastel">
-          <span className="md:px-2 px-1">Pastel</span>
+          <span className="md:px-2 px-1  hover:text-gray-500">Pastel</span>
         </Link>
         <Link to="/paintingtype/Fresco">
-          <span className="md:px-2 px-1">Fresco</span>
+          <span className="md:px-2 px-1  hover:text-gray-500">Fresco</span>
         </Link>
         <Link to="/paintingtype/Encaustic">
-          <span className="px-2 md:block hidden">Encaustic</span>
+          <span className="px-2 md:block hidden  hover:text-gray-500">
+            Encaustic
+          </span>
         </Link>
         <Link to="/paintingtype/Landscape">
-          <span className="px-2 md:block hidden">Landscape</span>
+          <span className="px-2 md:block hidden  hover:text-gray-500">
+            Landscape
+          </span>
         </Link>
         <Link to="/paintingtype/Still Life">
-          <span className="px-2 md:block hidden">Still Life</span>
+          <span className="px-2 md:block hidden  hover:text-gray-500">
+            Still Life
+          </span>
         </Link>
         {user ? (
           <div className="flex gap-2 items-center">
@@ -89,46 +91,23 @@ const Header = () => {
           </div>
         ) : (
           <>
-            <Link to="/signup">Sign up</Link>
-            <Link to="/login">Login</Link>
+            <Link
+              to="/signup"
+              className="md:px-2 px-1 hover:text-gray-500 font-medium "
+            >
+              Sign up
+            </Link>
+            <Link
+              to="/login"
+              className="md:px-2 px-1 hover:text-gray-500 font-medium "
+            >
+              Login
+            </Link>
           </>
         )}
-        {/* /////////// */}
-        {/* <span>||</span> */}
       </div>
     </>
   );
 };
 
 export default Header;
-{
-  /* <div className="justify-around flex md:px-3 py-1 divide-x divide-gray-400 bg-gray-50 [@media(max-width:400px)]:text-sm [@media(max-width:325px)]:!text-[12px]">
-  <Link to="/paintingtype/Acrylic">
-    <span className="md:px-2 px-1 cursor-pointer">Acrylic</span>
-  </Link>
-  <Link to="/paintingtype/Gouache">
-    <span className="md:px-2 px-1 cursor-pointer">Gouache</span>
-  </Link>
-  <Link to="/paintingtype/Pastel">
-    <span className="md:px-2 px-1 cursor-pointer">Pastel</span>
-  </Link>
-  <Link to="/paintingtype/Fresco">
-    <span className="md:px-2 px-1 cursor-pointer">Fresco</span>
-  </Link>
-  <Link to="/paintingtype/Encaustic">
-    <span className="px-2 md:block hidden cursor-pointer">Encaustic</span>
-  </Link>
-  <Link to="/paintingtype/Landscape">
-    <span className="px-2 md:block hidden cursor-pointer">Landscape</span>
-  </Link>
-  <Link to="/paintingtype/Still Life">
-    <span className="px-2 md:block hidden cursor-pointer">Still Life</span>
-  </Link>
-  <Link to="signup">
-    <span className="md:px-2 px-1 font-medium">Sign up</span>
-  </Link>
-  <Link to="login">
-    <span className="px-2 font-medium">Login</span>
-  </Link>
-</div>; */
-}

@@ -52,7 +52,7 @@ const PaintingDetails = () => {
         <button
           // onClick={() => addToCart(painting)}
           onClick={() => handleAddToCart(painting)}
-          className="mt-3  gap-1 items-center justify-center flex bg-[#2e2856] hover:bg-[#4b3ea1] text-white font-medium px-4 py-2 rounded-lg shadow-md  hover:shadow-xl transition-all duration-300"
+          className="mt-3  gap-1 items-center justify-center flex bg-[#2e2856] hover:bg-[#4b3ea1] text-white font-medium px-4 py-2 rounded-lg shadow-md  hover:shadow-xl transition-all duration-300 active:scale-95"
         >
           Add to Cart
           <FaShoppingCart />
@@ -63,63 +63,3 @@ const PaintingDetails = () => {
 };
 
 export default PaintingDetails;
-
-// const dummyPaintings = [
-//   {
-//     id: 1,
-//     title: "Crises",
-//     price: 1200,
-//     size: "24x30 inch",
-//     image: "/image2.jpg",
-//     rimage: "/rimage7.jpg",
-//     desc: "",
-//   },
-//   {
-//     id: 2,
-//     title: "Ocean Dreams",
-//     price: 950,
-//     size: "5x6 fit",
-//     image: "/image3.jpg",
-//     rimage: "/rimage3.jpg",
-//     desc: "Fields glowing under sunlight in night ",
-//   },
-//   {
-//     id: 3,
-//     title: "Poor & Rich",
-//     price: 1500,
-//     size: "30x36 inch",
-//     image: "/image1.jpg",
-//     rimage: "/rimage1.jpg",
-//     desc: "This painting visually explores the contrasting lives of children from rich and poor backgrounds, using vibrant, symbolic elements to highlight inequality and hope. At first glance, it depicts children together—playing, interacting, or dreaming—with a central motif (such as a folded Indian currency note, toys, and sweets) that unites the scene. Yet, subtle distinctions in clothing, posture, and the objects surrounding each group introduce the socio-economic divide: while some children appear carefree, others are marked by expressions of longing or resilience. The artwork draws inspiration from the paradoxes described in stories like Lost Spring, where childhood wonder is snatched away by poverty, and generational traditions often overshadow opportunity. By weaving playful and poignant imagery, the painting prompts viewers to reflect on childhood aspirations and the lasting impact of economic disparity, urging empathy and awareness.",
-//   },
-//   {
-//     id: 4,
-//     title: "Cat Sketch",
-//     price: 1600,
-//     size: "12x12 inch",
-//     image: "/image4.jpg",
-//     rimage: "/rimage4.jpg",
-//     desc: " Rendered in bold ink lines, this elegant monochrome cat portrait emphasizes both realism and expressive mark-making. The detailed texture of fur and the intense gaze celebrate the character and beauty of felines. The artist’s signature in Devanagari script personalizes the work, making it a blend of cultural and artistic identity.",
-//   },
-//   {
-//     id: 5,
-//     title: "Mystic River",
-//     price: 1800,
-//     size: "36x48 inch",
-//     image: "/image7.jpg",
-//     rimage: "/rimage7.jpg",
-
-//     desc: "Making file with my inspiratiion ansd make it. ",
-//   },
-
-//   {
-//     id: 6,
-//     title: "Cosmic Splash",
-//     price: 1800,
-//     size: "36x48 inch",
-//     image: "/image6.jpg",
-//     rimage: "/rimage6.jpg",
-
-//     desc: " This abstract artwork uses dynamic splashes of vivid color—blacks, blues, pinks, and whites—to evoke the chaotic beauty of a cosmic or galactic event. The random interplay of paint creates the impression of stars, nebulae, and the universe’s mystery, inspiring awe and wonder. The abstract nature allows viewers to interpret it as a visual representation of infinite space and possibility",
-//   },
-// ];
