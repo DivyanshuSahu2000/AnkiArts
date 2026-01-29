@@ -41,6 +41,12 @@ AnkiArts is a frontend e‑commerce web application built with **React** that sh
 
 ---
 
+## 📸 Screenshots (Optional)
+
+![App Screenshot](./public/Screenshot.png)
+
+---
+
 ## 🛠️ Tech Stack
 
 - **React**
@@ -51,19 +57,6 @@ AnkiArts is a frontend e‑commerce web application built with **React** that sh
 - **React Toastify**
 - **UUID**
 - **Netlify** (deployment)
-
----
-
-## 📸 Screenshots (Optional)
-
-Add screenshots here for better presentation:
-
-```
-/screenshots
-  ├── home.png
-  ├── cart.png
-  ├── login.png
-```
 
 ---
 
