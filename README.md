@@ -1,12 +1,88 @@
-# React + Vite
+# 🎨 AnkiArts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **Live Demo:** [https://ankiartsp.netlify.app/](https://ankiartsp.netlify.app/)
 
-Currently, two official plugins are available:
+AnkiArts is a frontend e‑commerce web application built with **React** that showcases artwork and allows users to add items to a cart, manage quantities, and experience a simple authentication flow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🖼️ Browse art paintings
+- 🛒 Add to cart with quantity handling
+- ➕ Increase quantity for same product (no duplicate items)
+- ❌ Remove single item or clear entire cart
+- 💾 Cart persistence using `localStorage`
+- 🔐 Login & Signup (frontend auth with Context API)
+- 🔔 Toast notifications
+- 📱 Fully responsive UI
+
+---
+
+## 🧠 Cart Logic (Important)
+
+- Each **product has a unique `id`** (comes from product data)
+- Each **cart item has a unique `cartId`** (generated using `uuid`)
+- If the same product is added multiple times:
+
+  - The item appears **once** in the cart
+  - Its `qty` value increases
+
+- Cart badge (navbar): shows **total quantity**
+- Cart page: shows detailed quantity per item
+
+---
+
+## 🔐 Authentication Logic
+
+- Login & Signup handled using **Auth Context**
+- User data is stored in `localStorage`
+- This is a **frontend‑only auth system** (no backend)
+
+---
+
+## 🛠️ Tech Stack
+
+- **React**
+- **Context API** (state management)
+- **React Router**
+- **Tailwind CSS**
+- **React Icons**
+- **React Toastify**
+- **UUID**
+- **Netlify** (deployment)
+
+---
+
+## 📸 Screenshots (Optional)
+
+Add screenshots here for better presentation:
+
+```
+/screenshots
+  ├── home.png
+  ├── cart.png
+  ├── login.png
+```
+
+---
+
+## 🚀 Future Improvements
+
+- Backend authentication (JWT)
+- Payment gateway integration
+- Order history
+- Admin dashboard
+- Wishlist feature
+
+---
+
+## 👨‍💻 Author
+
+**Divyanshu Sahu**
+
+- LinkedIn: [https://www.linkedin.com/in/divyanshu-sahu-2000sahu](https://www.linkedin.com/in/divyanshu-sahu-2000sahu)
+
+---
+
+⭐ If you like this project, consider giving it a star on GitHub!

@@ -6,10 +6,9 @@ import { RiDeleteBin2Fill } from "react-icons/ri";
 import { Link } from "react-router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useContext(CartContext);
-  const price = cart.reduce((sum, item) => sum + item.price, 0);
+  const price = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
   const cgst = (price * 6) / 100;
   const sgst = (price * 6) / 100;
   const total = price + cgst + sgst;
@@ -21,6 +20,7 @@ const Cart = () => {
       theme: "dark",
     });
   };
+
   const handleClearCart = () => {
     clearCart();
     toast.success(` removed all items from cart 🛒`, {
@@ -29,12 +29,13 @@ const Cart = () => {
       theme: "dark",
     });
   };
+  let totalItem = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
   return (
     <div className=" md:px-23  sm:px-10 px-5 items-center sm:flex-col justifiy-center py-8">
       <div className="cartHeading">
         <h2 className="text-3xl font-medium font-serif">Your Cart</h2>
         <h2 className="text-sm font-medium text-gray-600 font-serif mb-6">
-          You have {cart.length} items in your cart
+          You have {totalItem} items in your cart
         </h2>
       </div>
       {cart.length == 0 ? (
@@ -51,11 +52,16 @@ const Cart = () => {
                 >
                   <Link key={item.id} to={`/paintings/${item.id}`}>
                     <div className="flex items-center gap-4">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-20 h-16 object-cover rounded"
-                      />
+                      <div className="relative">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-20 h-16 object-cover rounded"
+                        />
+                        <h1 className="absolute -top-2 -right-2 flex items-center justify-center bg-gray-500 rounded-full h-5 w-5 text-amber-50">
+                          {item.qty}
+                        </h1>
+                      </div>
                       <div>
                         <h3 className="font-serif font-semibold">
                           {item.title}
@@ -66,7 +72,10 @@ const Cart = () => {
                     </div>
                   </Link>
                   <div className="flex gap-2 justify-center items-center">
-                    <p className="text-gray-600">₹{item.price}</p>
+                    <p className="text-gray-600">
+                      ₹{item.qty > 1 ? item.qty * item.price : item.price}
+                      {/* ₹{item.price}*{item.qty} */}
+                    </p>
                     <button onClick={() => handleRemoveFromCart(item)}>
                       <MdDelete size={23} />
                     </button>

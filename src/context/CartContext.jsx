@@ -11,10 +11,25 @@ const CartProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+  // const addToCart = (painting) => {
+  //   const cartItem = { ...painting, cartId: uuidv4() };
+  //   setCart([...cart, cartItem]);
+  // };
+
   const addToCart = (painting) => {
-    const cartItem = { ...painting, cartId: uuidv4() };
-    setCart([...cart, cartItem]);
+    setCart((prev) => {
+      const existingItem = prev.find((item) => item.id === painting.id);
+      if (existingItem) {
+        return prev.map((item) =>
+          item.id === painting.id ? { ...item, qty: item.qty + 1 } : item
+        );
+      }
+      return [...prev, { ...painting, qty: 1, cartId: uuidv4() }];
+    });
   };
+
+  ////
+
   const removeFromCart = (cartId) =>
     setCart(cart.filter((item) => item.cartId !== cartId));
 
